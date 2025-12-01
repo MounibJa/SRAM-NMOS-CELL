@@ -24,12 +24,17 @@ Read operation: Before reading, the bit-lines are precharged to around VDD/2. Wh
 | VDD | 1.8 V |
 | W/L pulldown transistor | 2 |
 | W/L access transistor | 3 |
-| Resistor resistance | 50kΩ |
-| PMOS width | 0.42μm |
-| PMOS length | 1.2μm |
+| Resistor resistance | 50 kΩ |
+| PMOS width | 0.42 μm |
+| PMOS length | 1.2 μm |
 
 ## Goals
 
+| Goal | Value |
+|------|-------|
+| Speed | 20 ns |
+| SNM (hold) | 150 mV |
+| SNM (write) | 200 mV |
 
 ## Design and Testing
 We are going with two designs. One utilizing a resistor nmos inverter, the other shall be using a PMOS modelling itself as a resistor by modifying its Width and Length values and maintaing it in the triode region.
