@@ -17,7 +17,9 @@ Write operation: By driving BL and BLB with complementary values and asserting W
 
 Read operation: Before reading, the bit-lines are precharged to around VDD/2. When WL is turned on, the latch experiences a disturbance on the bit-lines depending on the stored value. A sense amplifier detects and amplifies this small voltage difference to determine whether the cell contains a logic ‘0’ or ‘1’.
 
+## Parameters and Goals
 
+|VDD| 1.8 V |
 
 ## Design and Testing
 We are going with two designs. One utilizing a resistor nmos inverter, the other shall be using a PMOS modelling itself as a resistor by modifying its Width and Length values and maintaing it in the triode region.
@@ -28,6 +30,4 @@ We are going with two designs. One utilizing a resistor nmos inverter, the other
 <img width="496" height="325" alt="image" src="https://github.com/user-attachments/assets/33d87ba1-d22f-4b5b-b87a-aa27b877e583" />
 
 
-## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
