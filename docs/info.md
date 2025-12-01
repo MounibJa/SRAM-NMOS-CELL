@@ -23,6 +23,7 @@ Read operation: Before reading, the bit-lines are precharged to around VDD/2. Wh
 We are going with two designs. One utilizing a resistor nmos inverter, the other shall be using a PMOS modelling itself as a resistor by modifying its Width and Length values and maintaing it in the triode region.
 1. Resistor Design
 <img width="507" height="325" alt="image" src="https://github.com/user-attachments/assets/34532381-83a7-4635-9c89-fab942c0c8d6" />
+
 2. PMOS design
 <img width="496" height="325" alt="image" src="https://github.com/user-attachments/assets/33d87ba1-d22f-4b5b-b87a-aa27b877e583" />
 
