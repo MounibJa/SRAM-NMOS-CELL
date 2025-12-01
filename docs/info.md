@@ -19,7 +19,7 @@ Read operation: Before reading, the bit-lines are precharged to around VDD/2. Wh
 
 ## Parameters and Goals
 
-|VDD| 1.8 V |
+VDD | 1.8 V |
 
 ## Design and Testing
 We are going with two designs. One utilizing a resistor nmos inverter, the other shall be using a PMOS modelling itself as a resistor by modifying its Width and Length values and maintaing it in the triode region.
