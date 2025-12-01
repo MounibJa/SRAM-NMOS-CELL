@@ -1,36 +1,25 @@
 ![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg)
 
-# Tiny Tapeout Analog Project Template
+#  SRAM Documentation
 
 - [Read the documentation for project](docs/info.md)
 
-## What is Tiny Tapeout?
+# Project Overriew
 
-Tiny Tapeout is an educational project that aims to make it easier and cheaper than ever to get your digital designs manufactured on a real chip.
+Description:
+This project's goal is to desin an SRAM BitCell using the back to back inverter design utulizing NMOS inverters rather than traditional CMOS to see any potential advantages and drawbacks compared to CMOS.
 
-To learn more and get started, visit https://tinytapeout.com.
+The traditional design for a standard 6-transistor (6T) SRAM bit cell stores a single bit of data using two cross-coupled CMOS inverters that form a bistable latch. These inverters are connected in a feedback loop, resulting in one's output driving the other's input. This ends up producing two states representing a logical '1' and logic '0'.
 
-## Analog projects
+To write/read to the inverters you end up having an access transistor connected to their respective outputs. These access transistors are controlled connected to their gates and their drain is connected to the bitlines called BL and BL_N.
+To write a 1 you'd raise BL high, and BL_N low and turn the WL high and vice versa to write a 1 while maintaining WL to be high.
+For reading you precharge the lines to around VDD/2 and then turn on the WL, this should apply a voltage change onto the lines allowing a sense amp to amplify and read the change in the lines to determine what is stored.
+**DESIGNS**
+We are experimenting with two designs one using an NMOS inverter relying on a resistor acting as a pull up. This is due to its simple nature and it being easier to control the resistor values for our needed use case. Though will likely end up requiring lots of space limiting how many can fit on a singular tile.
+The second design will rely on the NMOS inverter utilziing a pmos acting in triode region to produce a resistor that will act similiar to our first design but consuming much less space. Though the drawback here is just how testing and comparing the values will be harder at the start to valdiate our cells in LTspice will be.
 
-For specifications and instructions, see the [analog specs page](https://tinytapeout.com/specs/analog/).
+**Plan**
+First we are going to test and see if the design itself works. We will first go with the NMOS resistor design seeing how straight forward that is to decde on our resistor's value. Then follow that up with testing SNM for hold, writing, and reading. Then we will replace our resistor ith a pmos and modify the Width and Length to adjust its values to match the first design's resistors in terms of resistance.
 
-## Enable GitHub actions to build the results page
+Following up we will begin designing the layout in Magic utilizing Sky130nm, before then extracting it for parasitics and testing it out utilizing ngspice validating to see if our values still match that of designs in LTspice.
 
-- [Enabling GitHub Pages](https://tinytapeout.com/faq/#my-github-action-is-failing-on-the-pages-part)
-
-## Resources
-
-- [FAQ](https://tinytapeout.com/faq/)
-- [Digital design lessons](https://tinytapeout.com/digital_design/)
-- [Learn how semiconductors work](https://tinytapeout.com/siliwiz/)
-- [Join the community](https://tinytapeout.com/discord)
-
-## What next?
-
-- [Submit your design to the next shuttle](https://app.tinytapeout.com/).
-- Edit [this README](README.md) and explain your design, how it works, and how to test it.
-- Share your project on your social network of choice:
-  - LinkedIn [#tinytapeout](https://www.linkedin.com/search/results/content/?keywords=%23tinytapeout) [@TinyTapeout](https://www.linkedin.com/company/100708654/)
-  - Mastodon [#tinytapeout](https://chaos.social/tags/tinytapeout) [@matthewvenn](https://chaos.social/@matthewvenn)
-  - X (formerly Twitter) [#tinytapeout](https://twitter.com/hashtag/tinytapeout) [@tinytapeout](https://twitter.com/tinytapeout)
-  - Bluesky [@tinytapeout.com](https://bsky.app/profile/tinytapeout.com)
