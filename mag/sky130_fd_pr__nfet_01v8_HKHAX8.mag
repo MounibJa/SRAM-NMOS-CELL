@@ -1,0 +1,75 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1764459837
+<< nmos >>
+rect -25 -75 25 75
+<< ndiff >>
+rect -83 63 -25 75
+rect -83 -63 -71 63
+rect -37 -63 -25 63
+rect -83 -75 -25 -63
+rect 25 63 83 75
+rect 25 -63 37 63
+rect 71 -63 83 63
+rect 25 -75 83 -63
+<< ndiffc >>
+rect -71 -63 -37 63
+rect 37 -63 71 63
+<< poly >>
+rect -33 147 33 163
+rect -33 113 -17 147
+rect 17 113 33 147
+rect -33 97 33 113
+rect -25 75 25 97
+rect -25 -97 25 -75
+rect -33 -113 33 -97
+rect -33 -147 -17 -113
+rect 17 -147 33 -113
+rect -33 -163 33 -147
+<< polycont >>
+rect -17 113 17 147
+rect -17 -147 17 -113
+<< locali >>
+rect -54 113 -17 147
+rect 17 113 54 147
+rect -71 63 -37 79
+rect -71 -79 -37 -63
+rect 37 63 71 79
+rect 37 -79 71 -63
+rect -54 -147 -17 -113
+rect 17 -147 54 -113
+<< viali >>
+rect -17 113 17 147
+rect -71 -63 -37 63
+rect 37 -63 71 63
+rect -17 -147 17 -113
+<< metal1 >>
+rect -29 147 29 153
+rect -54 113 -17 147
+rect 17 113 54 147
+rect -29 107 29 113
+rect -77 63 -31 75
+rect -77 -63 -71 63
+rect -37 -63 -31 63
+rect -77 -75 -31 -63
+rect 31 63 77 75
+rect 31 -63 37 63
+rect 71 -63 77 63
+rect 31 -75 77 -63
+rect -29 -113 29 -107
+rect -54 -147 -17 -113
+rect 17 -147 54 -113
+rect -29 -153 29 -147
+<< labels >>
+rlabel ndiffc -54 0 -54 0 0 D
+port 1 nsew
+rlabel ndiffc 54 0 54 0 0 S
+port 2 nsew
+rlabel polycont 0 130 0 130 0 G
+port 3 nsew
+<< properties >>
+string gencell sky130_fd_pr__nfet_01v8
+string library sky130
+string parameters w 0.75 l 0.25 m 1 nf 1 diffcov 100 polycov 100 guard 0 glc 1 grc 1 gtc 1 gbc 1 tbcov 100 rlcov 100 topc 1 botc 1 poverlap 0 doverlap 1 lmin 0.15 wmin 0.42 class mosfet compatible {sky130_fd_pr__nfet_01v8 sky130_fd_pr__nfet_01v8_lvt  sky130_fd_bs_flash__special_sonosfet_star  sky130_fd_pr__nfet_g5v0d10v5 sky130_fd_pr__nfet_05v0_nvt  sky130_fd_pr__nfet_03v3_nvt} full_metal 1 conn_gates 1 viasrc 100 viadrn 100 viagate 100 viagb 0 viagr 0 viagl 0 viagt 0 doports 1
+<< end >>
