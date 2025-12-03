@@ -44,12 +44,17 @@ We are going with two designs. One utilizing a resistor nmos inverter, the other
 2. PMOS design
 <img width="496" height="325" alt="image" src="https://github.com/user-attachments/assets/33d87ba1-d22f-4b5b-b87a-aa27b877e583" />
 
-## Reststor Design Testing
-Tests completed on the SRAM cell using resistors as the pull-up: 
+## Simulation Testing
+Tests completed on the Sram Cells:
 1. Speed
+The speed test is preform by first setting our WL, BL, BL_N low and then settling in on a stored value through setting up Initial conditions (IC) to make the cell store either a 1 or 0. THen we raise the BL and BL_N high and low depending on what we want the store value to change to. Then start measuring the time it took for inverter output values to stabilize and taking whichever took longer to stabilize as the the speed of our Cell.
 
 2. SNM (hold)
 
 3. SNM (write)
+
+# Resistor Pull up Values
+
+# PMOS Pull up Values
 
 
