@@ -57,11 +57,15 @@ The speed test is preform by first setting our WL, BL, BL_N low and then settlin
 1. Speed:
 <img width="325" height="505" alt="SRAM_RES_Speed" src="https://github.com/user-attachments/assets/bc9934ba-f4d8-4646-ac74-12fce292e222" />
 
-2. 
+2. SNM (HOLD)
+<img width="325" height="505" alt="MATLAB_RESIS_HOLD" src="https://github.com/user-attachments/assets/03422a4e-8d90-4d03-bbcb-e2fb54875d87" />
+
 
 
 # PMOS Pull up Values
 1. Speed:
 <img width="325" height="505" alt="SRAM_PMOS_Speed" src="https://github.com/user-attachments/assets/7f6b8f60-99ca-48e3-9353-800dc2086c04" />
 
-2. 
+2. SNM (HOLD)
+
+<img width="325" height="505" alt="MATLAB_PMOS_HOLD" src="https://github.com/user-attachments/assets/52917cb6-532e-47b2-88e3-559d95cd3e4d" />
