@@ -14,7 +14,7 @@ To write a 1 you'd raise BL high, and BL_N low and turn the WL high and vice ver
 For reading you precharge the lines to around VDD/2 and then turn on the WL, this should apply a voltage change onto the lines allowing a sense amp to amplify and read the change in the lines to determine what is stored.
 # **Designs**
 We are experimenting with two designs one using an NMOS inverter relying on a resistor acting as a pull up. This is due to its simple nature and it being easier to control the resistor values for our needed use case. Though will likely end up requiring lots of space limiting how many can fit on a singular tile.
-The second design will rely on the NMOS inverter utilziing a pmos acting in triode region to produce a resistor that will act similiar to our first design but consuming much less space. Though the drawback here is just how testing and comparing the values will be harder at the start to valdiate our cells in LTspice will be.
+The second design will rely on the NMOS inverter utilziing a pmos acting partly in triode region to produce a resistor that will act similiar to our first design but consuming much less space. Though the drawback here is just how testing and comparing the values will be harder at the start to valdiate our cells in LTspice will be.
 
 # **Plan**
 First we are going to test and see if the design itself works. We will first go with the NMOS resistor design seeing how straight forward that is to decde on our resistor's value. Then follow that up with testing SNM for hold, writing, and reading. Then we will replace our resistor ith a pmos and modify the Width and Length to adjust its values to match the first design's resistors in terms of resistance.
