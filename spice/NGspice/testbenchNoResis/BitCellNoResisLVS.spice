@@ -1,0 +1,23 @@
+* NGSPICE file created from BitCellNoResis.ext - technology: sky130A
+
+.subckt sky130_fd_pr__nfet_01v8_BHJCXL D0 G0 S1 G1 a_79_n50# VSUBS
+X0 a_79_n50# G1 S1 VSUBS sky130_fd_pr__nfet_01v8 ad=0.145 pd=1.58 as=0.0725 ps=0.79 w=0.5 l=0.25
+X1 S1 G0 D0 VSUBS sky130_fd_pr__nfet_01v8 ad=0.0725 pd=0.79 as=0.145 ps=1.58 w=0.5 l=0.25
+.ends
+
+.subckt sky130_fd_pr__nfet_01v8_HKHAX8 D S G VSUBS
+X0 S G D VSUBS sky130_fd_pr__nfet_01v8 ad=0.2175 pd=2.08 as=0.2175 ps=2.08 w=0.75 l=0.25
+.ends
+
+.subckt sky130_fd_pr__pfet_01v8_6KFL8S B D S G
+X0 S G D B sky130_fd_pr__pfet_01v8 ad=0.1218 pd=1.42 as=0.1218 ps=1.42 w=0.42 l=1.2
+.ends
+
+.subckt BitCellNoResis VDD GND WL BL BL_N BL_IN BL_NIN
+Xsky130_fd_pr__nfet_01v8_BHJCXL_0 BL_IN BL_NIN GND BL_IN BL_NIN GND sky130_fd_pr__nfet_01v8_BHJCXL
+Xsky130_fd_pr__nfet_01v8_HKHAX8_0 BL_N BL_NIN WL GND sky130_fd_pr__nfet_01v8_HKHAX8
+Xsky130_fd_pr__nfet_01v8_HKHAX8_1 BL_IN BL WL GND sky130_fd_pr__nfet_01v8_HKHAX8
+Xsky130_fd_pr__pfet_01v8_6KFL8S_0 VDD VDD BL_IN GND sky130_fd_pr__pfet_01v8_6KFL8S
+Xsky130_fd_pr__pfet_01v8_6KFL8S_1 VDD BL_NIN VDD GND sky130_fd_pr__pfet_01v8_6KFL8S
+.ends
+

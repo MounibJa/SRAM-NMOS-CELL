@@ -1,0 +1,52 @@
+* NGSPICE file created from BitCellResis.ext - technology: sky130A
+
+.subckt sky130_fd_pr__nfet_01v8_BHJCXL D0 G0 S1 G1 a_79_n50# VSUBS
+X0 a_79_n50# G1 S1 VSUBS sky130_fd_pr__nfet_01v8 ad=0.145 pd=1.58 as=0.0725 ps=0.79 w=0.5 l=0.25
+X1 S1 G0 D0 VSUBS sky130_fd_pr__nfet_01v8 ad=0.0725 pd=0.79 as=0.145 ps=1.58 w=0.5 l=0.25
+.ends
+
+.subckt sky130_fd_pr__nfet_01v8_HKHAX8 D S G VSUBS
+X0 S G D VSUBS sky130_fd_pr__nfet_01v8 ad=0.2175 pd=2.08 as=0.2175 ps=2.08 w=0.75 l=0.25
+.ends
+
+.subckt sky130_fd_pr__res_xhigh_po_0p35_ZFXP64 B R1_0_0 R2_0_0 R1_0_1 R2_0_1 R1_1_0
++ R2_1_0 R1_1_1 R2_1_1 R1_2_0 R2_2_0 R1_2_1 R2_2_1 R1_3_0 R2_3_0 R1_3_1 R2_3_1 R1_4_0
++ R2_4_0 R1_4_1 R2_4_1
+X0 R1_1_0 R2_1_0 B sky130_fd_pr__res_xhigh_po_0p35 l=0.69
+X1 R1_0_1 R2_0_1 B sky130_fd_pr__res_xhigh_po_0p35 l=0.69
+X2 R1_2_1 R2_2_1 B sky130_fd_pr__res_xhigh_po_0p35 l=0.69
+X3 R1_3_0 R2_3_0 B sky130_fd_pr__res_xhigh_po_0p35 l=0.69
+X4 R1_2_0 R2_2_0 B sky130_fd_pr__res_xhigh_po_0p35 l=0.69
+X5 R1_0_0 R2_0_0 B sky130_fd_pr__res_xhigh_po_0p35 l=0.69
+X6 R1_3_1 R2_3_1 B sky130_fd_pr__res_xhigh_po_0p35 l=0.69
+X7 R1_4_0 R2_4_0 B sky130_fd_pr__res_xhigh_po_0p35 l=0.69
+X8 R1_4_1 R2_4_1 B sky130_fd_pr__res_xhigh_po_0p35 l=0.69
+X9 R1_1_1 R2_1_1 B sky130_fd_pr__res_xhigh_po_0p35 l=0.69
+.ends
+
+.subckt BitCellResis VDD GND BL BL_N BL_IN BL_NIN WL
+Xsky130_fd_pr__nfet_01v8_BHJCXL_0 BL_IN BL_NIN GND BL_IN BL_NIN GND sky130_fd_pr__nfet_01v8_BHJCXL
+Xsky130_fd_pr__nfet_01v8_HKHAX8_0 BL_IN BL WL GND sky130_fd_pr__nfet_01v8_HKHAX8
+Xsky130_fd_pr__nfet_01v8_HKHAX8_1 BL_N BL_NIN WL GND sky130_fd_pr__nfet_01v8_HKHAX8
+Xsky130_fd_pr__res_xhigh_po_0p35_ZFXP64_0 GND sky130_fd_pr__res_xhigh_po_0p35_ZFXP64_0/R2_0_1
++ sky130_fd_pr__res_xhigh_po_0p35_ZFXP64_0/R2_1_0 sky130_fd_pr__res_xhigh_po_0p35_ZFXP64_0/R1_1_1
++ sky130_fd_pr__res_xhigh_po_0p35_ZFXP64_0/R2_0_1 sky130_fd_pr__res_xhigh_po_0p35_ZFXP64_0/R1_2_0
++ sky130_fd_pr__res_xhigh_po_0p35_ZFXP64_0/R2_1_0 sky130_fd_pr__res_xhigh_po_0p35_ZFXP64_0/R1_1_1
++ sky130_fd_pr__res_xhigh_po_0p35_ZFXP64_0/R2_2_1 sky130_fd_pr__res_xhigh_po_0p35_ZFXP64_0/R1_2_0
++ sky130_fd_pr__res_xhigh_po_0p35_ZFXP64_0/R2_3_0 sky130_fd_pr__res_xhigh_po_0p35_ZFXP64_0/R1_3_1
++ sky130_fd_pr__res_xhigh_po_0p35_ZFXP64_0/R2_2_1 sky130_fd_pr__res_xhigh_po_0p35_ZFXP64_0/R1_4_0
++ sky130_fd_pr__res_xhigh_po_0p35_ZFXP64_0/R2_3_0 sky130_fd_pr__res_xhigh_po_0p35_ZFXP64_0/R1_3_1
++ sky130_fd_pr__res_xhigh_po_0p35_ZFXP64_0/R2_4_1 sky130_fd_pr__res_xhigh_po_0p35_ZFXP64_0/R1_4_0
++ BL_IN VDD sky130_fd_pr__res_xhigh_po_0p35_ZFXP64_0/R2_4_1 sky130_fd_pr__res_xhigh_po_0p35_ZFXP64
+Xsky130_fd_pr__res_xhigh_po_0p35_ZFXP64_1 GND sky130_fd_pr__res_xhigh_po_0p35_ZFXP64_1/R2_1_1
++ sky130_fd_pr__res_xhigh_po_0p35_ZFXP64_1/R2_1_0 sky130_fd_pr__res_xhigh_po_0p35_ZFXP64_1/R1_0_1
++ sky130_fd_pr__res_xhigh_po_0p35_ZFXP64_1/R2_1_1 sky130_fd_pr__res_xhigh_po_0p35_ZFXP64_1/R1_2_0
++ sky130_fd_pr__res_xhigh_po_0p35_ZFXP64_1/R2_1_0 sky130_fd_pr__res_xhigh_po_0p35_ZFXP64_1/R1_2_1
++ sky130_fd_pr__res_xhigh_po_0p35_ZFXP64_1/R2_1_1 sky130_fd_pr__res_xhigh_po_0p35_ZFXP64_1/R1_2_0
++ sky130_fd_pr__res_xhigh_po_0p35_ZFXP64_1/R2_3_0 sky130_fd_pr__res_xhigh_po_0p35_ZFXP64_1/R1_2_1
++ sky130_fd_pr__res_xhigh_po_0p35_ZFXP64_1/R2_3_1 sky130_fd_pr__res_xhigh_po_0p35_ZFXP64_1/R1_4_0
++ sky130_fd_pr__res_xhigh_po_0p35_ZFXP64_1/R2_3_0 sky130_fd_pr__res_xhigh_po_0p35_ZFXP64_1/R1_4_1
++ sky130_fd_pr__res_xhigh_po_0p35_ZFXP64_1/R2_3_1 sky130_fd_pr__res_xhigh_po_0p35_ZFXP64_1/R1_4_0
++ VDD sky130_fd_pr__res_xhigh_po_0p35_ZFXP64_1/R1_4_1 BL_NIN sky130_fd_pr__res_xhigh_po_0p35_ZFXP64
+.ends
+

@@ -1,0 +1,34 @@
+* SRAM Cell Testbench for NGSpice
+* Include the extracted netlist
+.include BitCellResis.spice
+.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+
+* Supply voltage
+.param SUPPLY=1.8
+
+* Instantiate the SRAM cell
+xsram VDD GND BL BL_N BL_IN BL_NIN WL BitCellResis
+
+* Power supply
+VDD VDD 0 DC {SUPPLY}
+
+* ----------- WRITE "1" SEQUENCE -----------
+* Wordline: low until 20 ns, then high
+VWL WL 0 PWL( 0ns 0   20ns 0   20.1ns {SUPPLY} )
+
+* Bitline BL: low until 20 ns, then driven to 1.8 V
+VBL BL 0 PWL( 0ns 0   20ns 0   20.1ns {SUPPLY} )
+
+* Bitline_bar BL_N: stays low
+VBL_N BL_N 0 0
+* (If you want a transition: PWL(0ns 0 20ns 0 20.1ns 0))
+
+* ------------------------------------------
+
+.control
+set save_all_currents
+tran 0.1n 40n
+plot v(WL) v(BL) v(BL_N) v(BL_nin) v(bl_in)
+print v(VDD) v(WL) v(BL) v(BL_N)
+.endc
+
