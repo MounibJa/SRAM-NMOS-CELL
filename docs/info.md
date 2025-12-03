@@ -50,9 +50,9 @@ Tests completed on the Sram Cells:
 The speed test is preform by first setting our WL, BL, BL_N low and then settling in on a stored value through setting up Initial conditions (IC) to make the cell store either a 1 or 0. THen we raise the BL and BL_N high and low depending on what we want the store value to change to. Then start measuring the time it took for inverter output values to stabilize and taking whichever took longer to stabilize as the the speed of our Cell.
 
 2. SNM (hold)
-
+The SNM hold test is to see how resisitive our cell is to noise. This is done by keep WL, BL, BL_N low and sweeping a voltage between the input node of one inverter and the output node of the other. Then plotting out the values alongside the inverse of the function, producing for us a butterfly curve where we then utilize matlab to measure the largest area possible within the bounds of the butterfly curve.
 3. SNM (write)
-
+The SNM write test is similiar to the hold test instead to turn BL or BL_N high and the other line low while having WL also high. 
 # Resistor Pull up Values
 1. Speed:
 <img width="325" height="505" alt="SRAM_RES_Speed" src="https://github.com/user-attachments/assets/bc9934ba-f4d8-4646-ac74-12fce292e222" />
