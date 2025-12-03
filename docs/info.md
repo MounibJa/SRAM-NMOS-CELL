@@ -54,7 +54,14 @@ The speed test is preform by first setting our WL, BL, BL_N low and then settlin
 3. SNM (write)
 
 # Resistor Pull up Values
+1. Speed:
+<img width="1256" height="1168" alt="SRAM_RES_Speed" src="https://github.com/user-attachments/assets/bc9934ba-f4d8-4646-ac74-12fce292e222" />
+
+2. 
+
 
 # PMOS Pull up Values
+1. Speed:
+<img width="1250" height="1170" alt="SRAM_PMOS_Speed" src="https://github.com/user-attachments/assets/7f6b8f60-99ca-48e3-9353-800dc2086c04" />
 
-
+2. 
