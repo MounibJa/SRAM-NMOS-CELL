@@ -95,3 +95,14 @@ Which would then result in us having our SNM test for writing to fail as it was 
 The second problem that is the reason we had two designs was our original layout being the one that relied on a resistor was too big. The size of the resistor took up the majority of the space and if we were going to fill a whole tile with only our cells we would likely not fit more than potentially 10. Which led to us redesigning once again.
 
 The third problem testing for reading, if we were going to test reading properly we would need a precharger circuit and due to the fact we were working on Ltspice and our colleague on xschem it was harder to coordinate and setup our circuits to test them with each other. The reason we would need his precharger circuit is because if we would to just place 0.9V source on the access transistors, the bitlines we would be able to recieve a ripple in the voltage that they should have if it was being read by a sense amp. Instead, the BL were forced to remain at 0.9V while the internal nodes themselves would be the one to change. We decided to use this as more an opportunity to see if something like this did happen would our stored values changed which in both cases they did not.
+
+# Test plan for fabrication
+
+If frabricated alone the testing procedure would be aimed towards reading and writing.
+
+1. Reading
+We would connect our cell to VDD and GND for their respective ports providing 1.8V to VDD. Then our Bitlines would be connected to a precharger or a tool that can act similarily to one being providing 0.9V but can experience and applied voltage forcing it to change. After a second or so has passed we would turn on the precharger/source online and measure the bitlines using an oscilloscope in order to measure the voltage drops on the line. Through that we can then determine what values our cell defaulted with allowing us to then move onto writing
+2. Writing
+For writing we would enable the WL and raise BL and BL_n high depending on what we wanted to overwrite if we are storing a 1 we would raise BL_N to high and BL to low and vice versa if we were storing a 0. Once we have waited we would repeat the test but for reading to check to see if the stored value had changed.
+3. Speed
+Speed can only be measured if we can access our inverter outputs, if we can we can committ the write test once again but instead use an oscilloscope using the trigger settingto measure the time it takes for the lines to change after WL is turned on.
