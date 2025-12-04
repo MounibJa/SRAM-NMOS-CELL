@@ -44,10 +44,15 @@ We are going with two designs. One utilizing a resistor nmos inverter, the other
 2. PMOS design
 <img width="496" height="325" alt="image" src="https://github.com/user-attachments/assets/33d87ba1-d22f-4b5b-b87a-aa27b877e583" />
 
+## PMOS Configuration
+We needed to find a way to make the pmos transistor a pseudo-resistor that works similarly to the 50K resistor in that the pull-up is balanced for stability whilst still being able to write. 
+
+Initally the way we set this up was by connecting the gate of the pmos to its drain. This is a diode connected 
+
 ## Simulation Testing
 Tests completed on the Sram Cells:
 1. Speed
-The speed test is preformed by first setting our WL, BL, BL_N low, and then settling in on a stored value through setting up Initial conditions (IC) to make the cell store either a 1 or 0. Then we raise the BL and BL_N high and low depending on what we want the store value to change to. Then start measuring the time it took for inverter output values to stabilize and taking whichever took longer to stabilize as the the speed of our cell.
+The speed test is preformed by first setting our WL, BL, BL_N low, and then settling in on a stored value through setting up Initial conditions (IC) to make the cell store either a 1 or 0. Then we raise the BL and BL_N high and low depending on what we want the store value to change to. Then start measuring the time it took for inverter output values to stabilize and taking whichever took longer to stabilize as the the speed of our cell. Note that the side that takes longer is the one going from 0 to 1 as the pull-up element isn't as strong as the pull-down element. 
 
 2. SNM (hold)
 The SNM hold test is to see how resisitive our cell is to noise. This is done by keep WL, BL, BL_N low and sweeping a voltage between the input node of one inverter and the output node of the other. Then plotting out the values alongside the inverse of the function, producing for us a butterfly curve where we then utilize matlab to measure the largest area possible within the bounds of the butterfly curve.
