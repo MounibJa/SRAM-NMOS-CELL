@@ -62,13 +62,16 @@ The SNM write test is similiar to the hold test instead to turn BL or BL_N high 
 
 2. SNM (HOLD)
 <img width="325" height="505" alt="MATLAB_RESIS_HOLD" src="https://github.com/user-attachments/assets/03422a4e-8d90-4d03-bbcb-e2fb54875d87" />
+
 Resis
+
 | Parameter | Value |
 |------|-------|
 | Speed | 0.4 ns |
 | SNM (hold) | 218.6 mV |
 
 PMOS
+
 | Parameter | Value |
 |------|-------|
 | Speed | 1.3 ns |
