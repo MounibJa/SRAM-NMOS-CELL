@@ -47,7 +47,10 @@ We are going with two designs. One utilizing a resistor nmos inverter, the other
 ## PMOS Configuration
 We needed to find a way to make the pmos transistor a pseudo-resistor that works similarly to the 50K resistor in that the pull-up is balanced for stability whilst still being able to write. 
 
-Initally the way we set this up was by connecting the gate of the pmos to its drain. This is a diode connected 
+Initally the way we set this up was by connecting the gate of the pmos to its drain. This is a diode connected pmos, however it was not a good choice for modelling a resistor. For starters, the output of the charging node gets capped at VDD-Vth, because Vgs must be > than Vth, but Vgs = Vds, So when Vds < Vth, the pmos closes. 
+
+Instead, we opted to connect the gate to drain, and pick a W/L ratio that best models our resistor in the Vd range that we expect to see (0-VDD). This works quite well as can be seen below. 
+
 
 ## Simulation Testing
 Tests completed on the Sram Cells:
