@@ -47,7 +47,7 @@ We are going with two designs. One utilizing a resistor nmos inverter, the other
 ## Simulation Testing
 Tests completed on the Sram Cells:
 1. Speed
-The speed test is preform by first setting our WL, BL, BL_N low and then settling in on a stored value through setting up Initial conditions (IC) to make the cell store either a 1 or 0. THen we raise the BL and BL_N high and low depending on what we want the store value to change to. Then start measuring the time it took for inverter output values to stabilize and taking whichever took longer to stabilize as the the speed of our Cell.
+The speed test is preformed by first setting our WL, BL, BL_N low, and then settling in on a stored value through setting up Initial conditions (IC) to make the cell store either a 1 or 0. Then we raise the BL and BL_N high and low depending on what we want the store value to change to. Then start measuring the time it took for inverter output values to stabilize and taking whichever took longer to stabilize as the the speed of our cell.
 
 2. SNM (hold)
 The SNM hold test is to see how resisitive our cell is to noise. This is done by keep WL, BL, BL_N low and sweeping a voltage between the input node of one inverter and the output node of the other. Then plotting out the values alongside the inverse of the function, producing for us a butterfly curve where we then utilize matlab to measure the largest area possible within the bounds of the butterfly curve.
