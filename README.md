@@ -13,11 +13,12 @@ To write/read to the inverters you end up having an access transistor connected 
 To write a 1 you'd raise BL high, and BL_N low and turn the WL high and vice versa to write a 1 while maintaining WL to be high.
 For reading you precharge the lines to around VDD/2 and then turn on the WL, this should apply a voltage change onto the lines allowing a sense amp to amplify and read the change in the lines to determine what is stored.
 # **Designs**
-We are experimenting with two designs one using an NMOS inverter relying on a resistor acting as a pull up. This is due to its simple nature and it being easier to control the resistor values for our needed use case. Though will likely end up requiring lots of space limiting how many can fit on a singular tile.
-The second design will rely on the NMOS inverter utilziing a pmos acting partly in triode region to produce a resistor that will act similiar to our first design but consuming much less space. Though the drawback here is just how testing and comparing the values will be harder at the start to valdiate our cells in LTspice will be.
+We are experimenting with two designs: one using an NMOS inverter relying on a resistor acting as a pull-up. This is due to its simple nature and it being easier to control the resistor values for our needed use case, though it will likely end up requiring lots of space, limiting how many can fit on a singular tile.
+
+The second design will rely on the NMOS inverter utilizing a PMOS acting partly in the triode region to produce a resistor that will act similar to our first design but will consume much less space. The drawback here is how testing and comparing the values will be harder at the start to validate our cells in LTspice.
 
 # **Plan**
-First we are going to test and see if the design itself works. We will first go with the NMOS resistor design seeing how straight forward that is to decde on our resistor's value. Then follow that up with testing SNM for hold, writing, and reading. Then we will replace our resistor ith a pmos and modify the Width and Length to adjust its values to match the first design's resistors in terms of resistance.
+First, we are going to test and see if the design itself works. We will start with the NMOS resistor design, seeing how straightforward it is to decide on our resistor's value. Then we will follow that up with testing SNM for hold, writing, and reading. After that, we will replace our resistor with a PMOS and modify the width and length to adjust its values to match the first design's resistors in terms of resistance.
 
-Following up we will begin designing the layout in Magic utilizing Sky130nm, before then extracting it for parasitics and testing it out utilizing ngspice validating to see if our values still match that of designs in LTspice.
+Following that, we will begin designing the layout in Magic utilizing Sky130nm, before extracting it for parasitics and testing it using ngspice to validate whether our values still match those of the designs in LTspice.
 
