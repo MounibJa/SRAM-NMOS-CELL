@@ -47,3 +47,11 @@ NGspice:
 
 <img width="500" height="500" alt="ResistorSizing" src="https://github.com/user-attachments/assets/5c82c511-bf42-40ef-baa1-a2c81051f846" />
 
+PMOS LAYOUT
+
+<img width="500" height="400" alt="Layout_PMOS" src="https://github.com/user-attachments/assets/25f577d8-fc02-4974-9730-244d3e4bf0a1" />
+
+
+RESISTOR LAYOUT
+
+<img width="600" height="450" alt="Layout_Resis" src="https://github.com/user-attachments/assets/bb764f3e-dcbc-4c0e-9931-4d731a67bc5e" />
