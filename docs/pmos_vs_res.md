@@ -11,3 +11,6 @@
 - This can be explained by simply analyzing the characteristic graph once again. As the transistor enters saturation and the current tapers off for lower node voltages, where the resistor remains linear. 
 
 3. Write speed
+- Here is where the PMOS faces a drawback. Of course, since the PMOS pull-up strength weakens relative to the resistor for lower node voltages (this is what saves power), it won't be as quick to flip. This results in a slower write speed compared to the resistor cell. Look to the image below for the theoretical difference.
+<img width="500" height="1166" alt="SRAM_PMOS_vs_RES_Speed" src="https://github.com/user-attachments/assets/ae1fdb82-355b-4018-9496-f5c99e5bc884" />
+- Though this appears very significant, it turns out that 
