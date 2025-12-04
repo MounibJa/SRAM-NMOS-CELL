@@ -8,11 +8,17 @@
 2. Passive power
 - This is the one of the biggest wins for the PMOS design, aside from the obvious size during the layout process. The PMOS cell uses significantly less power, which can be seen by analyzing the current leaking through over all possible node voltages. Comparing this to the resistor, the advantage is obvious. Look to the plot below for a clear view of this. The image is the steady state current leakage on the low node.
 LTSpice:
+
 <img width="500" height="500" alt="SRAM_passivePowerComp_lowNode" src="https://github.com/user-attachments/assets/a6343e08-f0f8-4b17-aa62-490eece909c7" />
+
 NGspice:
+
 1. PMOS power draw
+
 <img width="500" height="500" alt="PowerDraw_PMOS" src="https://github.com/user-attachments/assets/5b04f7e1-e99b-4af1-8165-f00781e1e21e" />
+
 2. Resis power draw
+
 <img width="500" height="500" alt="PowerDraw_Resis" src="https://github.com/user-attachments/assets/51c63ce9-079f-4525-ad56-97f869903c84" />
 
 - This can be explained by simply analyzing the characteristic graph once again. As the transistor enters saturation and the current tapers off for lower node voltages, where the resistor remains linear.
@@ -20,7 +26,21 @@ NGspice:
 
 3. Write speed
 - Here is where the PMOS faces its major drawback. Of course, since the PMOS pull-up strength weakens relative to the resistor for lower node voltages (this is what saves power), it won't be as quick to flip. This results in a slower write speed compared to the resistor cell. Look to the image below for the theoretical difference.
+LTSpice:
+
 <img width="500" height="500" alt="SRAM_PMOS_vs_RES_Speed" src="https://github.com/user-attachments/assets/ae1fdb82-355b-4018-9496-f5c99e5bc884" />
+
+NGspice:
+
+1. PMOS
+
+<img width="500" height="500" alt="NGSPICE_WRITE_PMOS" src="https://github.com/user-attachments/assets/3fa69ad1-f91d-44b5-9055-fb526044cc8a" />
+
+2. Resis
+
+<img width="500" height="500" alt="NGSPICE_WRITE_RESIS" src="https://github.com/user-attachments/assets/635b3a02-8a27-4804-bc65-3a1c080f6954" />
+
+
 - Though this appears very significant, it turns out that since the resistor circuit is so much larger and involves the 50K Ohms, capacitance causes write speeds to be much closer. This is great news as it means this really isn't as big of an issue as it appears at first glance, however both designs meet our initial parameters.
 
 4. Lastly, size. This is of course the main reason we made this design change. The resistor circuit was 15.9 x 13.7 microns, and the new and improved pmos circuit is 6.56 x 7.88 microns. 
