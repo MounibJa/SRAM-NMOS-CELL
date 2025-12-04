@@ -14,4 +14,6 @@
 3. Write speed
 - Here is where the PMOS faces its major drawback. Of course, since the PMOS pull-up strength weakens relative to the resistor for lower node voltages (this is what saves power), it won't be as quick to flip. This results in a slower write speed compared to the resistor cell. Look to the image below for the theoretical difference.
 <img width="500" height="1166" alt="SRAM_PMOS_vs_RES_Speed" src="https://github.com/user-attachments/assets/ae1fdb82-355b-4018-9496-f5c99e5bc884" />
-- Though this appears very significant, it turns out that since the resistor circuit is so much larger and involves the 50K Ohms, capacitance causes write speeds to be much closer. This is great news as it means this really isn't as big of an issue as it appears at first glance, however both designs meet our initial parameters. 
+- Though this appears very significant, it turns out that since the resistor circuit is so much larger and involves the 50K Ohms, capacitance causes write speeds to be much closer. This is great news as it means this really isn't as big of an issue as it appears at first glance, however both designs meet our initial parameters.
+
+4. Lastly, size. This is of course the main reason we made this design change. The resistor circuit was 15.9 x 13.7 microns, and the new and improved pmos circuit is 6.56 x 7.88 microns. 
