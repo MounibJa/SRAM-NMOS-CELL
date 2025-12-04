@@ -5,13 +5,14 @@
 - [Read the documentation for project](docs/info.md)
 
 # **Description**:
-This project's goal is to desin an SRAM BitCell using the back to back inverter design utulizing NMOS inverters rather than traditional CMOS to see any potential advantages and drawbacks compared to CMOS.
+This project's goal is to design an SRAM bit cell using the back-to-back inverter design utilizing NMOS inverters rather than traditional CMOS, to observe any potential advantages and drawbacks compared to CMOS.
 
-The traditional design for a standard 6-transistor (6T) SRAM bit cell stores a single bit of data using two cross-coupled CMOS inverters that form a bistable latch. These inverters are connected in a feedback loop, resulting in one's output driving the other's input. This ends up producing two states representing a logical '1' and logic '0'.
+The traditional design for a standard 6-transistor (6T) SRAM bit cell stores a single bit of data using two cross-coupled CMOS inverters that form a bistable latch. These inverters are connected in a feedback loop, with each inverter’s output driving the other’s input. This configuration produces two stable states representing a logical ‘1’ and a logical ‘0’.
 
-To write/read to the inverters you end up having an access transistor connected to their respective outputs. These access transistors are controlled connected to their gates and their drain is connected to the bitlines called BL and BL_N.
-To write a 1 you'd raise BL high, and BL_N low and turn the WL high and vice versa to write a 1 while maintaining WL to be high.
-For reading you precharge the lines to around VDD/2 and then turn on the WL, this should apply a voltage change onto the lines allowing a sense amp to amplify and read the change in the lines to determine what is stored.
+To write/read from the inverters, access transistors are connected to their respective outputs. These access transistors are controlled through their gates, and their drains are connected to the bitlines, called BL and BL_N.
+To write a 1, you raise BL high and BL_N low and turn WL high; to write a 0, you reverse the bitline values while keeping WL high.
+
+For reading, you precharge the bitlines to around VDD/2 and then turn on WL. This causes a small voltage difference to appear on the bitlines, which a sense amplifier can detect and amplify to determine the stored value.
 # **Designs**
 We are experimenting with two designs: one using an NMOS inverter relying on a resistor acting as a pull-up. This is due to its simple nature and it being easier to control the resistor values for our needed use case, though it will likely end up requiring lots of space, limiting how many can fit on a singular tile.
 
