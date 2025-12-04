@@ -1,4 +1,4 @@
-##LTspice Files 
+## LTspice Files 
 This file contains brief explanations for the LTSpice files in this folder. 
 
 1. 4T+2T vs 4T2R SRAM Butterfly Curve: This file is the Static Noise Margin (SNM) test for the bit cell while holding data. It contains both circuit varaints. Plotting values of V(Q) gives the Butterfly Curve used to determine the static noise margin. This is done by taking V(Q) plotted against its inverse, and looking for the side length of the largest square that fits inside the smaller loop of the plot.
