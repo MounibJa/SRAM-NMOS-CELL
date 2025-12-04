@@ -85,3 +85,13 @@ PMOS
 2. SNM (HOLD)
 
 <img width="325" height="505" alt="MATLAB_PMOS_HOLD" src="https://github.com/user-attachments/assets/52917cb6-532e-47b2-88e3-559d95cd3e4d" />
+
+
+# Design problems
+
+The first problem that occurred during this process was simulation. When simulation began we did not have proper access to the pdk instead relying on 180nm technology rather than the sky130nm technology we were going to begin testing on. So this led to us using Ltspice but as we would realize LTspice was not as flexible/capable of being controlled as easily as was NGspice and xschem that we would gain access to later.
+Which would then result in us having our SNM test for writing to fail as it was not able to properly simulate it like it did for hold, we had compared our setup to a colleague who had the time to use xschem and NGspice to test his circuit and despite our setups being the same LTspice would not provide the results that we had expected even after testing it with a 6T circuit for comparison.
+
+The second problem that is the reason we had two designs was our original layout being the one that relied on a resistor was too big. The size of the resistor took up the majority of the space and if we were going to fill a whole tile with only our cells we would likely not fit more than potentially 10. Which led to us redesigning once again.
+
+The third problem testing for reading, if we were going to test reading properly we would need a precharger circuit and due to the fact we were working on Ltspice and our colleague on xschem it was harder to coordinate and setup our circuits to test them with each other. The reason we would need his precharger circuit is because if we would to just place 0.9V source on the access transistors, the bitlines we would be able to recieve a ripple in the voltage that they should have if it was being read by a sense amp. Instead, the BL were forced to remain at 0.9V while the internal nodes themselves would be the one to change. We decided to use this as more an opportunity to see if something like this did happen would our stored values changed which in both cases they did not.
