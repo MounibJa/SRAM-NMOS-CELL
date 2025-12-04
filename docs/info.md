@@ -96,7 +96,7 @@ The second problem that is the reason we had two designs was our original layout
 
 The third problem testing for reading, if we were going to test reading properly we would need a precharger circuit and due to the fact we were working on Ltspice and our colleague on xschem it was harder to coordinate and setup our circuits to test them with each other. The reason we would need his precharger circuit is because if we would to just place 0.9V source on the access transistors, the bitlines we would be able to recieve a ripple in the voltage that they should have if it was being read by a sense amp. Instead, the BL were forced to remain at 0.9V while the internal nodes themselves would be the one to change. We decided to use this as more an opportunity to see if something like this did happen would our stored values changed which in both cases they did not.
 
-# Test plan for fabrication
+# Test plan for Post Fabrication
 
 If frabricated alone the testing procedure would be aimed towards reading and writing.
 
