@@ -43,4 +43,7 @@ NGspice:
 
 - Though this appears very significant, it turns out that since the resistor circuit is so much larger and involves the 50K Ohms, capacitance causes write speeds to be much closer. This is great news as it means this really isn't as big of an issue as it appears at first glance, however both designs meet our initial parameters.
 
-4. Lastly, size. This is of course the main reason we made this design change. The resistor circuit was 15.9 x 13.7 microns, and the new and improved pmos circuit is 6.56 x 7.88 microns. 
+4. Lastly, size. This is of course the main reason we made this design change. The resistor circuit was 15.9 x 13.7 microns, and the new and improved pmos circuit is 6.56 x 7.88 microns. This is due to how much space is required to reproduce 50k ohms using a poly resistor in sky130.
+
+<img width="500" height="500" alt="ResistorSizing" src="https://github.com/user-attachments/assets/5c82c511-bf42-40ef-baa1-a2c81051f846" />
+
