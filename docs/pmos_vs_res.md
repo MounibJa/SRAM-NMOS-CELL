@@ -1,7 +1,7 @@
 ## Key Differences Between PMOS and Resistor Design
 
 1. Basic Characteristics
-- While the idea of the PMOS is to replace the 50K resistor, there are key differences that explain the tradeoffs of each design. The PMOS operates in both saturation and triode regions. The triode region models the resistor almost 1:1, however the saturation part is where it tapers away from it. This is actually a positive difference in many ways, though there are drawbacks to consider as well (later deemed unimportant). Look below for the current vs node voltage characteristics of the pmos vs the resistor.
+- While the idea of the PMOS is to replace the 50K resistor, there are key differences that explain the tradeoffs of each design. The PMOS operates in the triode region, though it does creep into cutoff area. The triode region models the resistor almost 1:1, however the saturation part is where it tapers away from it. This is actually a positive difference in many ways, though there are drawbacks to consider as well (later deemed unimportant). Look below for the current vs node voltage characteristics of the pmos vs the resistor.
 <img width="500" height="500" alt="RES_vs_PMOS_characteristics" src="https://github.com/user-attachments/assets/9eaaf97c-dca9-44ce-a2ac-ae3642f9b027" />
 
 
