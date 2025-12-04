@@ -12,6 +12,6 @@
 - Actual values from layout simulations result in 9.9uA x 1.8V for pmos, and 37.8uA x 1.8V. 
 
 3. Write speed
-- Here is where the PMOS faces a drawback. Of course, since the PMOS pull-up strength weakens relative to the resistor for lower node voltages (this is what saves power), it won't be as quick to flip. This results in a slower write speed compared to the resistor cell. Look to the image below for the theoretical difference.
+- Here is where the PMOS faces its major drawback. Of course, since the PMOS pull-up strength weakens relative to the resistor for lower node voltages (this is what saves power), it won't be as quick to flip. This results in a slower write speed compared to the resistor cell. Look to the image below for the theoretical difference.
 <img width="500" height="1166" alt="SRAM_PMOS_vs_RES_Speed" src="https://github.com/user-attachments/assets/ae1fdb82-355b-4018-9496-f5c99e5bc884" />
-- Though this appears very significant, it turns out that 
+- Though this appears very significant, it turns out that since the resistor circuit is so much larger and involves the 50K Ohms, capacitance causes write speeds to be much closer. This is great news as it means this really isn't as big of an issue as it appears at first glance, however both designs meet our initial parameters. 
